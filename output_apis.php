@@ -14,12 +14,13 @@ ini_set('display_startup_errors', 1);
   ///these two variables are from other parts of the session, most likely to be. 
 $mail_text = $_SESSION['mail'];
 $token_text = $_SESSION['token'];
+$dir = "../your/dir/here/"
 error_reporting(E_ALL);
 
   //try and catch so it doesnt breaks, 
 try {
         //the dir getting the file needs to have 777, could do a chmod 777 so it works. No any other use for this dir, also blockin  webbrowsing . 
-        $myfile = fopen('../tokens/inbound_logs/' . $token_text , "w");
+        $myfile = fopen($dir . $token_text , "w");
         $count ++;
         echo "$count";
         $txt = $mail_text . "\n";
